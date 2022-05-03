@@ -47,9 +47,7 @@ function setupDefaultNetworkProviders(buidlerConfig) {
       url: getDefaultProviderURL(netConfig.network),
       gas: netConfig.gasPrice || 'auto',
       gasPrice: netConfig.gasPrice || 'auto',
-      accounts: {
-        mnemonic: getAccountMnemonic(),
-      },
+      accounts: [process.env.PK]
     }
   }
 }
@@ -105,6 +103,12 @@ const config: HardhatUserConfig = {
       chainId: 1337,
       url: 'http://localhost:8545',
     },
+    rinkeby: {
+      loggingEnabled: true,
+      gas: 12000000,
+      gasPrice: 'auto',
+      accounts: [process.env.PK]
+    }
   },
   etherscan: {
     apiKey: process.env.ETHERSCAN_API_KEY,

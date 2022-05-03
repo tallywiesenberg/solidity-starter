@@ -1,14 +1,18 @@
 import '@nomiclabs/hardhat-ethers'
 import { ethers } from 'hardhat'
+import config from "../hardhat.config"
 
 async function main() {
-  const factory = await ethers.getContractFactory('Counter')
+  const factory = await ethers.getContractFactory('ETHPool')
 
   // If we had constructor arguments, they would be passed into deploy()
-  const contract = await factory.deploy()
+  const contract = await factory.deploy("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266")
 
   // The address the Contract WILL have once mined
   console.log(contract.address)
+
+  // The address of the team (owner) of the contract
+  console.log("team address: ", "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266")
 
   // The transaction that was sent to the network to deploy the Contract
   console.log(contract.deployTransaction.hash)
