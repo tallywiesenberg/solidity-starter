@@ -50,6 +50,10 @@ Create/modify network config in hardhat.config.ts and add API key and private ke
 
 `npx hardhat run --network rinkeby scripts/deploy.ts`
 
+deployed at: `0x2c4f9a14921da8d03a904ac299c93bdcdc33ffcb`
+
+tx hash: `https://rinkeby.etherscan.io/tx/0x1d2a494261caaa2f2676516637d5b90a920be57f468f6daad90fbde4327407bf`
+
 ### Verify on Etherscan
 
 Using the hardhat-etherscan plugin, add Etherscan API key to hardhat.config.ts, then run:
