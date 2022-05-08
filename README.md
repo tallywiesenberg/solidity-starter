@@ -50,9 +50,9 @@ Create/modify network config in hardhat.config.ts and add API key and private ke
 
 `npx hardhat run --network rinkeby scripts/deploy.ts`
 
-deployed at: `0x2c4f9a14921da8d03a904ac299c93bdcdc33ffcb`
+deployed at: `0x87C3A5EBD6311C476B8049D54244bc69c3524e6e`
 
-tx hash: `https://rinkeby.etherscan.io/tx/0x1d2a494261caaa2f2676516637d5b90a920be57f468f6daad90fbde4327407bf`
+tx hash: `https://rinkeby.etherscan.io/tx/0xadc6d2a521d26db2feed4d76096b98d74632b4464dfa6644f77f7357a01aeb88`
 
 ### Verify on Etherscan
 
