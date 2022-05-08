@@ -37,7 +37,7 @@ contract ETHPool {
 
     //functions
     //deposit stake ( payable, external)
-    function depositStake() payable external {
+    receive() payable external {
         //require msg.value > 0
         require(msg.value > 0);
         //if userStakes[msg.sender] is 0,
