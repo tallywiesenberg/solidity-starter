@@ -1,27 +1,28 @@
 import '@nomiclabs/hardhat-ethers'
+import { BigNumber } from 'ethers'
 import { ethers } from 'hardhat'
 import config from "../hardhat.config"
 
 async function main() {
 
-  const rinkeby_address = "0x2c4f9a14921da8d03a904ac299c93bdcdc33ffcb"
+  const address = "0x87C3A5EBD6311C476B8049D54244bc69c3524e6e"
+  const provider = await ethers.provider
 
-  const rinkeby_contract = new ethers.Contract()
+  const contract = new ethers.Contract(
+    address,
+    [
+      "function totalPoolAmount() public view returns (uint256)",
+      "function team() public view returns (address)",
+    ],
+    provider
+  )
 
-  // If we had constructor arguments, they would be passed into deploy()
-  const contract = await factory.deploy("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266")
+  const eth_bal = await contract.totalPoolAmount()
 
-  // The address the Contract WILL have once mined
-  console.log(contract.address)
+  const team_addr = await contract.team()
 
-  // The address of the team (owner) of the contract
-  console.log("team address: ", "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266")
-
-  // The transaction that was sent to the network to deploy the Contract
-  console.log(contract.deployTransaction.hash)
-
-  // The contract is NOT deployed yet; we must wait until it is mined
-  await contract.deployed()
+  console.log("total eth amount in pool:", eth_bal / 1E18)
+  console.log("team address:", team_addr )
 }
 
 main()

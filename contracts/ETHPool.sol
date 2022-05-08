@@ -8,18 +8,18 @@ contract ETHPool {
     //global variables
 
     //amount in pool
-    uint256 totalPoolAmount;
+    uint256 public totalPoolAmount;
 
     //team address
-    address team;
+    address public team;
 
     //dynamic arrays
         //users (address[])
-    address[] users;
+    address[] public users;
 
     //mappings
         //userStakes: user (address) -> amountStaked (uint256)
-    mapping(address => uint256) userStakes;
+    mapping(address => uint256) public userStakes;
 
     //events
         //deposit (user (address), amount (uint256), timestamp (uint256))
